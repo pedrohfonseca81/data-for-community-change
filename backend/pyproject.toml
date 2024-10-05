@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "dfcc"
+version = "0.1.0"
+description = "NASA Space Apps Challenge"
+authors = ["tyde81 <pedrohfonseca.1981@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = {extras = ["standard"], version = "^0.115.0"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
