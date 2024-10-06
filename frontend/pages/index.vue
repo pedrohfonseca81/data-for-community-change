@@ -1,5 +1,8 @@
 <template>
     <div>
-        <Map />
-    </div>  
+        <SplashScreen>
+            <Map />
+            <BottomBar />
+        </SplashScreen>
+    </div>
 </template>

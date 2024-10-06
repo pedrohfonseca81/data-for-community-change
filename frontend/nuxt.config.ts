@@ -10,5 +10,8 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: ['@nuxtjs/leaflet'],
+  modules: ['@nuxtjs/leaflet', '@nuxt/icon', '@pinia/nuxt'],
+  // app: {
+  //   pageTransition: { name: 'page', mode: 'out-in' }
+  // },
 });
