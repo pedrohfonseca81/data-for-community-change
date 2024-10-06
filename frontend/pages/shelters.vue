@@ -1,11 +1,12 @@
 <template>
     <div>
-        <h1 class="font-bold text-2xl ml-16 mt-4">Shelters</h1>
+        <h1 class="font-bold text-2xl ml-4 mt-4">Shelters</h1>
         <div>
             <div v-for="element in elements" :key="element.id">
-                <ShelterCard :element="element" class="mx-16 my-4" />
+                <ShelterCard :element="element" class="mx-4 my-4" />
             </div>
         </div>
+        <div class="my-28"></div>
         <BottomBar />
     </div>
 </template>

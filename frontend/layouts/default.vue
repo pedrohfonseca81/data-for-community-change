@@ -4,6 +4,12 @@
     </div>
 </template>
 
+<style>
+html, body {
+    background-color: #F5FFFA;
+}
+</style>
+
 <script lang="ts" setup>
 useHead({
     script: [{ src: 'https://unpkg.com/leaflet/dist/leaflet.js' }, { src: "https://unpkg.com/vue2-leaflet" }],

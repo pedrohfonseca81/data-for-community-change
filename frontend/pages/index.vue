@@ -1,8 +1,8 @@
 <template>
     <div>
-        <SplashScreen>
+        <!-- <SplashScreen> -->
             <Map />
             <BottomBar />
-        </SplashScreen>
+        <!-- </SplashScreen> -->
     </div>
 </template>

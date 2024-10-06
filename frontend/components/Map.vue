@@ -3,11 +3,7 @@
     <div class="absolute top-0 w-full p-4 z-[9999]">
       <SearchInput />
       <div class="mt-4">
-        <IconButton
-          name="material-symbols:layers-rounded"
-          class="text-2xl text-[#424242]"
-          @click="openMenu"
-        />
+        <IconButton name="material-symbols:layers-rounded" class="text-2xl text-[#424242]" @click="openMenu" />
         <br />
         <Menu v-if="openMenuState" />
       </div>
@@ -17,7 +13,7 @@
   </client-only>
 </template>
 
-<script lang="tsx" setup>
+<script lang="js" setup>
 import { ref, onMounted, resolveComponent, cloneVNode, createApp } from "vue";
 import PopupContent from "./PopupContent.vue";
 const brStates = await import("../assets/brstates.json");
@@ -108,19 +104,6 @@ const data = {
 };
 
 onMounted(async () => {
-  async function getTemperature(lat, long) {
-    const response = await $fetch(
-      `https://api.weatherapi.com/v1/current.json?key=1229cec3193945f09da32307240610&q=${lat},${long}&aqi=no`,
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
-
-    return response;
-  }
-
   const { default: Leaflet } = await import("leaflet");
 
   const map = Leaflet.map("map", {
@@ -132,28 +115,24 @@ onMounted(async () => {
       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   }).addTo(map);
 
-  function getColor(temp) {
-    if (temp < 0) {
-      return "blue";
-    } else if (temp >= 0 && temp < 20) {
-      return "yellow";
-    } else {
-      return "red";
-    }
-  }
+  const greenIcon = Leaflet.icon({
+    iconUrl: "~/assets/img/green_pin.png",
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41],
+  });
 
-  data.data.results.forEach(async (element) => {
+  data.data.results.forEach((element) => {
     const popupNode = document.createElement("div");
     const popupApp = createApp(PopupContent, { element });
     popupApp.mount(popupNode);
 
     const popup = Leaflet.popup().setContent(popupNode);
 
-    const marker = Leaflet.marker();
+    const marker = Leaflet.marker({ icon: greenIcon });
 
     const circle = Leaflet.circle();
-
-    const temperature = await getTemperature(element.latitude, element.longitude);
 
     marker.bindPopup(popup).openPopup();
     marker.setLatLng({ lat: element.latitude, lng: element.longitude }).addTo(map);
@@ -167,16 +146,49 @@ onMounted(async () => {
     });
   });
 
+  // function getColor(temp) {
+  //   if (temp < 0) {
+  //     return "blue";
+  //   } else if (temp >= 0 && temp < 20) {
+  //     return "yellow";
+  //   } else {
+  //     return "red";
+  //   }
+  // }
+
+  function highlightFeature(e) {
+    var layer = e.target;
+
+    layer.setStyle({
+      weight: 5,
+      color: "#666",
+      dashArray: "",
+      fillOpacity: 0.7,
+    });
+
+    if (!Leaflet.Browser.ie && !Leaflet.Browser.opera && !Leaflet.Browser.edge) {
+      layer.bringToFront();
+    }
+  }
+
+  function resetHighlight(e) {
+    geojson.resetStyle(e.target);
+  }
+
+
   // L.geoJson(rsCities.default).addTo(map);
   L.geoJson(brStates.default, {
-    style: {
-      fillColor: getColor(temperature),
-      weight: 2,
-      opacity: 1,
-      color: "white",
-      dashArray: "3",
-      fillOpacity: 0.7,
-    },
+    style: function (feature) {
+      console.log(feature);
+      return {
+        fillColor: "yellow" || "red",
+        weight: 0.5,
+        opacity: 0.5,
+        color: 'darkgray',
+        dashArray: 0,
+        fillOpacity: 0.2,
+      };
+    }
   }).addTo(map);
 });
 
