@@ -290,7 +290,7 @@ onMounted(async () => {
 
   const greenIcon = Leaflet.icon({
     iconUrl: greenPin,
-    iconSize: [80, 80],
+    iconSize: [30.73],
     iconAnchor: [12, 41],
     popupAnchor: [1, -34],
     shadowSize: [41, 41],
