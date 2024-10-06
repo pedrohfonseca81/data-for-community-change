@@ -12,14 +12,14 @@
         Satelite: <span class="text-gray-900 font-bold">{{ props.element.satellite }}</span>
       </div>
       <div class="w-fit bg-red-400 p-1 rounded-xl">
-        <span class="text-xs text-red-800 truncate font-semibold">C: {{ props.element.confidence }}</span>%
+        <span class="text-xs text-red-800 truncate font-semibold">C: {{ props.element.confidence }}%</span>
       </div>
     </div>
     <div class="p-2 bg-gray-100 rounded text-gray-800 mt-2 shadow">
       <h3 class="font-bold">Data:</h3>
       <ul class="list-none mt-1 text-xs font-medium text-gray-950 leading-6">
         <li class="flex flex-row items-center">
-          <span class="mr-1"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+          <span class="mr-1"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="21" viewBox="0 0 24 24">
               <path fill="currentColor"
                 d="M12 14q-.425 0-.712-.288T11 13t.288-.712T12 12t.713.288T13 13t-.288.713T12 14m-4 0q-.425 0-.712-.288T7 13t.288-.712T8 12t.713.288T9 13t-.288.713T8 14m8 0q-.425 0-.712-.288T15 13t.288-.712T16 12t.713.288T17 13t-.288.713T16 14m-4 4q-.425 0-.712-.288T11 17t.288-.712T12 16t.713.288T13 17t-.288.713T12 18m-4 0q-.425 0-.712-.288T7 17t.288-.712T8 16t.713.288T9 17t-.288.713T8 18m8 0q-.425 0-.712-.288T15 17t.288-.712T16 16t.713.288T17 17t-.288.713T16 18M5 22q-.825 0-1.412-.587T3 20V6q0-.825.588-1.412T5 4h1V2h2v2h8V2h2v2h1q.825 0 1.413.588T21 6v14q0 .825-.587 1.413T19 22zm0-2h14V10H5z" />
             </svg>
@@ -28,15 +28,15 @@
         </li>
         <li class="flex flex-row items-center">
           <span class="mr-1">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="21" viewBox="0 0 24 24">
               <path fill="currentColor"
                 d="M12 22q-2.075 0-3.537-1.463T7 17q0-1.2.525-2.238T9 13V5q0-1.25.875-2.125T12 2t2.125.875T15 5v8q.95.725 1.475 1.763T17 17q0 2.075-1.463 3.538T12 22m-1-11h2v-1h-1V9h1V7h-1V6h1V5q0-.425-.288-.712T12 4t-.712.288T11 5z" />
             </svg>
           </span>
-          Brightness Temperature: {{ props.element.bright_t31 }}
+          Brightness Temp.: {{ props.element.bright_t31 }}
         </li>
         <li class="flex flex-row items-center">
-          <span class="mr-1"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+          <span class="mr-1"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="21" viewBox="0 0 24 24">
               <path fill="currentColor"
                 d="M12 23.3L8.65 20H4v-4.65L.7 12L4 8.65V4h4.65L12 .7L15.35 4H20v4.65L23.3 12L20 15.35V20h-4.65zm0-6.3q2.075 0 3.538-1.463T17 12t-1.463-3.537T12 7T8.463 8.463T7 12t1.463 3.538T12 17m0 3.5l2.5-2.5H18v-3.5l2.5-2.5L18 9.5V6h-3.5L12 3.5L9.5 6H6v3.5L3.5 12L6 14.5V18h3.5z" />
             </svg>
@@ -45,23 +45,20 @@
         </li>
 
         <li class="flex flex-row items-center">
-          <span class="mr-1"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+          <span class="mr-1"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="21" viewBox="0 0 24 24">
               <path fill="currentColor"
                 d="M12 22q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22Zm0-4q.675 0 1.3-.125t1.2-.4q-1.575-.725-2.538-2.175T11 12q0-1.85.963-3.3T14.5 6.525q-.575-.275-1.2-.4T12 6Q9.5 6 7.75 7.738T6 12q0 2.5 1.75 4.25T12 18Z" />
             </svg></span>
           Day/Night: {{ props.element.daynight }}
         </li>
         <li class="flex flex-row items-center">
-          <span class="mr-1"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+          <span class="mr-1"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="21" viewBox="0 0 24 24">
               <path fill="currentColor" d="M3 21v-2h18v2zm4-4v-2h10v2zm-4-4v-2h18v2zm4-4V7h10v2zM3 5V3h18v2z" />
             </svg></span>
           FRP: {{ props.element.frp }}
         </li>
         <li class="flex flex-row items-center">
-          <span class="mr-1"><svg width="14" height="13" viewBox="0 0 14 13" fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-
-            </svg></span>
+          <span class="mr-1"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="21" viewBox="0 0 24 24"><path fill="currentColor" d="M14 23.2v-2q2.925 0 4.963-2.037T21 14.2h2q0 1.875-.712 3.513t-1.925 2.85t-2.85 1.925T14 23.2m0-4v-2q1.25 0 2.125-.875T17 14.2h2q0 2.075-1.463 3.538T14 19.2m-8.45 3.375q-.375 0-.75-.15T4.125 22l-3.55-3.55q-.275-.3-.425-.675t-.15-.75q0-.4.15-.763t.425-.637L3.75 12.45q.575-.575 1.425-.587t1.425.562l1.25 1.25l.7-.7l-1.25-1.25q-.575-.575-.575-1.4t.575-1.4L8.725 7.5q.575-.575 1.413-.575t1.412.575l1.25 1.25l.7-.7l-1.25-1.25q-.575-.575-.575-1.412t.575-1.413L15.425.8q.3-.3.675-.45t.75-.15t.738.15t.662.45l3.55 3.55q.3.275.438.638t.137.762q0 .375-.137.75t-.438.675l-3.175 3.175q-.575.575-1.412.575T15.8 10.35L14.55 9.1l-.7.7l1.25 1.25q.575.575.563 1.413t-.588 1.412l-1.4 1.4q-.575.575-1.412.575t-1.413-.575l-1.25-1.25l-.7.7l1.25 1.25q.575.575.563 1.425t-.588 1.425L6.95 22q-.275.275-.638.425t-.762.15m0-1.975l1.05-1.05L3.05 16L2 17.05zm2.125-2.125l1.05-1.05l-3.55-3.55l-1.05 1.05zm9.55-9.55l1.05-1.05l-3.55-3.55l-1.05 1.05zM19.35 6.8l1.05-1.05l-3.55-3.55l-1.05 1.05z"/></svg></span>
           Instrument: {{ props.element.instrument }}
         </li>
       </ul>
