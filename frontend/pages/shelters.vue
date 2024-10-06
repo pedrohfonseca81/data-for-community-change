@@ -1,6 +1,9 @@
 <template>
     <div>
         <h1 class="font-bold text-2xl ml-4 mt-4">Shelters</h1>
+        <div class="p-4">
+            <SearchInput />
+        </div>
         <div>
             <div v-for="element in elements" :key="element.id">
                 <ShelterCard :element="element" class="mx-4 my-4" />

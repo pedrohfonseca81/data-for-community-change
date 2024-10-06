@@ -1,6 +1,6 @@
 <template>
   <!-- <div class="p-4 w-64 bg-white rounded-lg shadow-md"> -->
-  <div class="font-poppins" :class="class">
+  <div class="font-poppins z-[999999999]" :class="class">
     <div class="flex items-center justify-between gap-2">
       <VerifiedIcon />
 

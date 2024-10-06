@@ -1,8 +1,12 @@
 <template>
     <div>
+        <div class="w-full h-full absolute z-[-0]">
+                <img src="~/assets/img/frame1.svg" class="fixed top-0 left-[-210px]" alt="">
+                <img src="~/assets/img/frame2.svg" class="fixed bottom-[-20px] right-[-240px]" alt="">
+        </div>
         <div class="flex flex-col items-center">
             <h1 class="text-2xl my-6 font-normal">My Profile</h1>
-            <div class="flex flex-col items-center gap-2">
+            <div class="flex flex-col items-center gap-2 z-[100]">
                 <div class="bg-slate-600 w-28 h-28 rounded-full"></div>
                 <h2 class="text-xl font-bold text-[#424242]">Pedro Vinícius Paladino Carvalho</h2>
             </div>
