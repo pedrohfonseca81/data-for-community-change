@@ -88,13 +88,13 @@
     </div>
     <div class="mt-4">
       <h3 class="text-sm font-semibold">Datas from:</h3>
-      <div class="flex items-center">
-        <img src="https://via.placeholder.com/30x15.png?text=meteo+matrics" alt="Meteomatics" />
-        <span class="ml-1">Meteomatics</span>
-      </div>
-      <div class="flex items-center">
-        <img src="https://via.placeholder.com/30x15.png?text=NASA" alt="NASA" />
-        <span class="ml-1">NASA</span>
+      <div class="flex justify-center gap-4">
+        <div class="flex items-center">
+          <img src="~/assets/img/meteomatics.png" alt="Meteomatics" />
+        </div>
+        <div class="flex items-center">
+          <img src="~/assets/img/nasa.png" alt="NASA" />
+        </div>
       </div>
     </div>
   </div>

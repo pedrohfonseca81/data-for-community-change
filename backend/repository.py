@@ -57,15 +57,25 @@ class Repository:
                 max_results -= 1
 
         if not coords:
-            for city in disasters:
-                disasters[city]["city"]["latitude"] = 0
-                disasters[city]["city"]["longitude"] = 0
+            for protocol in all_disasters:
+                all_disasters[protocol]["city"]["latitude"] = 0
+                all_disasters[protocol]["city"]["longitude"] = 0
+                
+            if not disasters:
+                return all_disasters
+
+            for key, value in all_disasters.items():
+                disasters[key] = value
+
             return disasters
 
         # req = requests.get(f"https://brasilapi.com.br/api/ibge/municipios/v1/{uf}?providers=gov")
         # city_list = req.json()
 
-        for protocol, data in all_disasters.items():
+        if not disasters:
+            disasters = all_disasters
+
+        for protocol, data in disasters.items():
             # ibge_code = 0
             # for cities in city_list:
             #     for key, value in cities.items():
