@@ -16,6 +16,7 @@
 <script lang="js" setup>
 import { ref, onMounted, resolveComponent, cloneVNode, createApp } from "vue";
 import PopupContent from "./PopupContent.vue";
+import greenPin from "~/assets/img/green_pin.png";
 const brStates = await import("../assets/brstates.json");
 const rsCities = await import("../assets/RS.json");
 
@@ -116,8 +117,8 @@ onMounted(async () => {
   }).addTo(map);
 
   const greenIcon = Leaflet.icon({
-    iconUrl: "~/assets/img/green_pin.png",
-    iconSize: [25, 41],
+    iconUrl: greenPin,
+    iconSize: [80, 80],
     iconAnchor: [12, 41],
     popupAnchor: [1, -34],
     shadowSize: [41, 41],
@@ -130,7 +131,7 @@ onMounted(async () => {
 
     const popup = Leaflet.popup().setContent(popupNode);
 
-    const marker = Leaflet.marker({ icon: greenIcon });
+    const marker = Leaflet.marker(null,{ icon: greenIcon });
 
     const circle = Leaflet.circle();
 
@@ -177,7 +178,7 @@ onMounted(async () => {
 
 
   // L.geoJson(rsCities.default).addTo(map);
-  L.geoJson(brStates.default, {
+  Leaflet.geoJson(brStates.default, {
     style: function (feature) {
       console.log(feature);
       return {
